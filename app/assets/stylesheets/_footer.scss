@@ -7,6 +7,12 @@ a{text-decoration: none;
   padding: 0px 20px 10px;
   height: 360px;
 }
+.merucari {
+  width:950px;
+  margin: 0 auto;
+  display: flex;
+  height: 310px;
+}
 
 
 .merucari-overview {
@@ -26,22 +32,19 @@ a{text-decoration: none;
       font-size: 10px;
       font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
       opacity: 0.7;
-      text-decoration: none;
-      color: white;
+      font-weight: normal;
     }
     &__link1 {
-      margin-top: 30px;
       display: inline-block;
+      margin-top: 30px;
       &__btn--twitter {
         margin-right: 20px;
-        color: white;
         font-size: 30px;
       }
     }
     &__link2 {
       display: inline-block;
       &__btn--facebook {
-        color: white;
         font-size: 30px;
       }
     }
@@ -57,7 +60,7 @@ a{text-decoration: none;
     font-weight: bold;
     font-size: 14px;
   }
-  &__contents {
+  &__lists {
     margin: 16px 0px 0px;
     height: 16px;
     &__name {
@@ -65,8 +68,7 @@ a{text-decoration: none;
       font-size: 10px;
       font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
       opacity: 0.7;
-      text-decoration: none;
-      color: white;
+      font-weight: normal;
     }
   }
 }
@@ -80,10 +82,10 @@ a{text-decoration: none;
     font-weight: bold;
     font-size: 14px;
   }
-  &__contents {
+  &__lists {
     display: flex;
     &__1 {
-      margin: 23px 0px 0px;
+      margin: 16px 0px 0px;
       padding-right: 10px;
       &__name {
         box-sizing: border-box;
@@ -91,27 +93,25 @@ a{text-decoration: none;
         font-size: 10px;
         font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
         opacity: 0.7;
-        text-decoration: none;
-        color: white;
+        font-weight: normal;
       }
     }
     &__2 {
-      margin: 23px 0px 0px;
+      margin: 16px 0px 0px;
       padding-left: 10px;
+      float: right;
       &__name {
         box-sizing: border-box;
         margin-bottom: 17px;
         font-size: 10px;
         font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
         opacity: 0.7;
-        text-decoration: none;
-        color: white;
       }
     }
   }
 }
 
-.menu4 {
+.merucari-country {
   margin-top: 18px;
   width: 200px;
   padding-right: 10px;
@@ -120,7 +120,7 @@ a{text-decoration: none;
     font-weight: bold;
     font-size: 14px;
   }
-  &__contents {
+  &__lists {
     margin: 16px 0px 0px;
     height: 16px;
     &__name {
@@ -128,21 +128,19 @@ a{text-decoration: none;
       font-size: 10px;
       font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
       opacity: 0.7;
-      text-decoration: none;
-      color: white;
+      font-weight: normal;
     }
   }
 }
 
-.buttom {
+.bottom-row {
   width: 1020px;
   margin: 10px auto 20px;
   align-items: center;
   display: flex;
-  &__contents {
+  &__lists {
     color: inherit;
     vertical-align: middle;
-    text-decoration: none;
     &__btn {
       padding-left: 17px;
       height: 32px;
