@@ -1,0 +1,114 @@
+a{text-decoration: none;}
+.header {
+  background-color: white;
+  z-index: 3;
+  height: 12vh;
+  position: fixed;
+  width: 100vw;
+  .upper-row {
+    display: flex;
+    &__logo {
+      padding: 0 20px 0 200px;
+      display: flex;
+      &--mark {
+        text-align: center;
+        font-size: 25px;
+        padding: 5px 0 0 0;
+      }
+      &--merucari {
+        padding: 0 0 0 5px;
+        font-size: 25px;
+      }
+    }
+    &__search {
+      padding: 5px 0 0 10px;
+      &--input {
+        height: 25px;
+        width: 60vw;
+      }
+      &--button {
+      }
+    }
+  }
+  .bottom-row {
+    display: flex;
+    bottom: 0;
+    &__category {
+      padding: 5px 20px 0 200px;
+      width: 150px;
+      height: 10wh;
+      .list-tag {
+        color: red;
+        float: left;
+        padding: 0 5px 0 0;
+      }
+      .list-name {
+        padding: 0 0 0 5px;
+        color: black;
+        font-size: 13px;
+        font-weight: 700;
+      }
+    }
+    &__brand {
+      width: 150px;
+      padding: 5px 0 0 0;
+      .list-tag {
+        color: red;
+        float: left;
+      }
+      .list-name {
+        color: black;
+        padding: 0 0 0 5px;
+        font-size: 13px;
+        font-weight: 700;
+      }
+    }
+    &__lists {
+      padding: 5px 0 0 180px;
+      display: flex;
+      .list {
+        color: gray;
+        padding: 0 5px 0 20px;
+      }
+      .list-name {
+        color: black;
+      }
+    }
+  }
+}
+.content {
+  padding: 12vh 0 0;
+  .link-list {
+    width: 100vw;
+    height: 38vh;
+    left: 0;
+    background-color: antiquewhite;
+    overflow: hidden;
+    will-change: transform;
+    animation: slider 20s infinite;
+    &__home {
+      width: 100vw;
+      height: 38vh;
+      float: left;
+      position: relative;
+    }
+    &__information {
+      width: 100vw;
+      height: 38vh;
+      float: left;
+      position: relative;
+    }
+    &__application {
+      width: 100vw;
+      height: 38vh;
+      float:left;
+      position: relative;
+      &--footer {
+        bottom: 0;
+        height: 30px;
+        background-color: white;
+        opacity: 0.3;
+      }
+    }
+  }
+}
