@@ -1,24 +1,24 @@
 // ヘッダーロゴの部分
-.common-header{
-  height: 128px;
-  padding: 10px 450px;
+body{
   background-color: #f5f5f5;
-  text-align: center;
-  h1{
-    display: block;
-    margin: 40px 0;
-    
-  }
-  &__image{
-    width: 180px;
-    height: 49px;
+  position: absolute;
+}
+.common.container{
+  padding: 0 0 100px;
+  .common-header{
+    text-align: center;
+    h1{
+      display: inline-block;
+      margin: 40px 0;
+      
+    }
+    &__image{
+      width: 123px;
+      height: 33px;
+    }
   }
 }
 
-.wrapper{
-  width: 100%;
-  height: 100%;
-}
 .contents{
   height:310px;
   width: 700px;
@@ -44,13 +44,20 @@
     color: #fff;
     text-align: center;
     line-height: 50px;
+    position: relative;
   }  
   &__mail-address{
     margin-top: 30px;
     background-color: #ea352d;
+    .fa-envelope{
+      position: absolute;
+      left: 16px;
+      top: 35%;
+    }
   }
   &__facebook{
     background: #385185;
+    
   }
   &__google{
     background-color: #fff;
@@ -81,7 +88,7 @@
       height:65px;
       margin-top: 50px;
       padding: 0 500px;
-      display: block;
+      vertical-align: middle;
       text-align: center;
     }
     &__text{
@@ -89,4 +96,22 @@
       margin-top:5px;
     }
   }
+}
+
+@media screen and (min-width: 768px){
+.common.container{
+  .common-header{
+    height: 128px;
+    padding: 10px 450px;
+  }
+}
+.common-footer{
+  
+  ul{
+    li{
+      display: block;
+      margin: 0 0 0 16px;
+    }  
+  }  
+}
 }
