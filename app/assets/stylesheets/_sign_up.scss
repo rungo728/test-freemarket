@@ -9,12 +9,19 @@ body{
     text-align: center;
     h1{
       display: inline-block;
-      margin: 11px 0 12px;      
-    }
-    // ヘッダーロゴの部分
-    &__image{
-      width: 123px;
-      height: 33px;
+      margin: 11px 0 12px;    
+      // ヘッダーロゴの部分
+      a{
+        display:inline-block;
+        width: 125px;
+        height: 33px;
+        margin: 0 8px 0 0;
+        line-height: 33px;
+        img{
+          width: 125px;
+          height: 33px;
+        }
+      }  
     }
   }
   .contents-main{
@@ -49,7 +56,6 @@ body{
             border: 1px solid transparent;
           }  
           .mail-address{
-            margin-top: 30px;
             background-color: #ea352d;
             .fa-envelope{
               position: absolute;
@@ -83,7 +89,7 @@ body{
   }
   .common-footer{
     position: absolute;
-    height:250px;
+    height: 280px;
     padding: 40px 0;
     text-align: center;
     right: 0;
@@ -107,25 +113,23 @@ body{
           }  
         }
       }    
-      // フッダーロゴの部分
-      a{
-        display: block;  
-      } 
-      .common-footer-container__logo{
-        width: 80px;
-        height: 65px;
-        margin: 40px auto 0;
-        img{
-          vertical-align: middle;
-        }
-      } 
-      .common-footer-container__text{
-        p{
-          margin:8px 0 0;
-          small{
-            font-size: 13px;
-          }
-        }
+    }  // フッダーロゴの部分
+    a{
+      display: block;  
+    } 
+    .common-footer-container__logo{
+      width: 80px;
+      height: 65px;
+      margin: 40px auto 0;
+      img{
+        vertical-align: middle;
+      
+      }
+    } 
+    p{
+      margin:8px 0 0;
+      small{
+        font-size: 13px;
       }
     }  
   }
@@ -134,7 +138,41 @@ body{
 .common.container{
   .common-header{
     height: 128px;
-    padding: 10px 450px;
+    h1{
+      margin:40px 0 0;
+      a{
+        line-height: 49px;
+        img{
+          width: 185px;
+          height: 49px;
+        }
+      }
+    }
+    
+  }
+  .contents-main{
+    .contents-container{
+      width:700px;
+      margin:0 auto;
+      .contents-head{
+        font-size: 22px;
+        padding: 32px;
+      }
+    }
+
+  }
+  .common-footer{
+    width: 456px;
+    height: 280px;
+    margin: 0 auto;
+    nav{
+      ul{
+        li{
+          display: inline-block;
+          margin:0 0 0 16px;
+        }
+      }
+    }
   }
 }
 }
