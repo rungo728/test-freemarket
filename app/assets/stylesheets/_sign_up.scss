@@ -19,51 +19,70 @@ body{
   }
 }
 
-.contents{
-  height:310px;
-  width: 700px;
-  margin:0 auto;
-  background-color: #fff;
-  padding-bottom: 100px;
-  &__heading{
-    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-    padding: 25px;
-    color: black;
-    font-size:18px;
-    font-weight: bold;
-    text-align: center;
-    border-bottom: 1px solid whitesmoke;
-  }
-  &__btn{
-    display: block;
-    height: 50px;
-    width : 343px;
-    margin: 30px auto;
-    border-radius: 5px;
-    font-size: 14px;
-    color: #fff;
-    text-align: center;
-    line-height: 50px;
-    position: relative;
-  }  
-  &__mail-address{
-    margin-top: 30px;
-    background-color: #ea352d;
-    .fa-envelope{
-      position: absolute;
-      left: 16px;
-      top: 35%;
+.contents-main{
+  display: block;
+  .contents-container{
+    background-color: #fff;
+    .contents-head{
+      font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+      padding: 16px;
+      line-height: 1.5;
+      color: black;
+      font-size:18px;
+      font-weight: bold;
+      text-align: center;
+      border-bottom: 1px solid whitesmoke;
+    }
+    .registration-form{
+      padding: 24px 16px 40px;
+      .contents-select{
+        max-width : 343px;
+        margin: 0 auto;
+        .contents__btn{
+          border-radius: 4px;
+          display: block;
+          width : 100%;
+          font-size: 14px;
+          color: #fff;
+          text-align: center;
+          line-height: 48px;
+          position: relative;
+          cursor: pointer;
+          border: 1px solid transparent;
+        }  
+        .mail-address{
+          margin-top: 30px;
+          background-color: #ea352d;
+          .fa-envelope{
+            position: absolute;
+            left: 16px;
+            top: 35%;
+          }  
+        } 
+        .facebook{
+          background: #385185;
+          margin: 16px 0 0;
+          .fa-facebook-square{
+            position: absolute;
+            left: 16px;
+            top: 35%;
+          }
+        }
+        .google{
+          background-color: #fff;
+          color: black;
+          border: 1px solid black;
+          margin: 16px 0 0;
+          .fa-google{
+            position: absolute;
+            left: 16px;
+            top: 35%;
+          }
+        } 
+      }
     }
   }
-  &__facebook{
-    background: #385185;
-    
-  }
-  &__google{
-    background-color: #fff;
-    color: black;
-    border: 1px solid black;
-  }
+
 }
 .common-footer{
   width: 100%;

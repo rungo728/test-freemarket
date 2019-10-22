@@ -5,19 +5,21 @@
       = link_to root_path do
         = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?4194600336", alt: "merucari",class: 'common-header__image'
   -# 登録方法選択画面
-  .contents
-    .contents__heading
-      新規会員登録
-    .contents__btn
-      = link_to "/signup/step1",class:"contents__btn contents__mail-address" do
-        = fa_icon 'envelope'
-        メールアドレスで登録する
-      = link_to "#",class:"contents__btn contents__facebook" do
-        = fa_icon 'facebook-square'
-        Facebookで登録する
-      = link_to "#",class:"contents__btn contents__google"  do
-        = fa_icon 'google'
-        googleで登録する
+  %main.contents-main
+    %section.contents-container
+      %h2.contents-head
+        新規会員登録
+      .contents.registration-form
+        .contents-select
+          = link_to "/signup/step1",class:"contents__btn mail-address" do
+            = fa_icon 'envelope'
+            メールアドレスで登録する
+          = link_to "#",class:"contents__btn facebook" do
+            = fa_icon 'facebook-square'
+            Facebookで登録する
+          = link_to "#",class:"contents__btn google"  do
+            = fa_icon 'google'
+            googleで登録する
   -# ページのフッダー部分
   .common-footer
     %nav
