@@ -26,3 +26,58 @@
     }
   }
 }
+@media screen and (max-width: 767px){
+.adside2{
+  display: none;
+}
+}
+@media screen and (min-width: 768px){  
+.adside{
+  display: none;
+}
+.adside2{
+  color: rgb(255, 255, 255);
+  background-image: url("/images/merucari3.jpg");
+  .adside2-banner{
+    display: flex;
+    width: 750px;
+    margin: 0px auto;
+    justify-content: space-between;
+    &__links{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      &__text1{
+        color: rgb(255, 255, 255);
+        font-size: 24px;
+        font-weight: 600;
+      }
+      &__text2{
+        color: rgb(255, 255, 255);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+      &__logo{
+        img{
+          height: 68px;
+          margin-right: 20px;
+          width: 68px;
+        } 
+        a{
+          img{
+            height: 40px;
+            margin-right: 8px;
+            width: 144px;
+          }
+        }
+      }
+    }
+    &__figure{
+      img{
+        height: 250px;
+        width: 300px;
+      }
+    }
+  }
+}
+}

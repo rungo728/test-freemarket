@@ -54,6 +54,7 @@
       = fa_icon 'tag'
       %span
         ブランドから探す
+  -#768px以上でのヘッダー画面表示 
 .header2
   .upper-row
     .upper-row__1
@@ -111,7 +112,7 @@
           .under-row__user__login    
             = link_to new_user_session_path() do
               ログイン
-    -# ヘッダーのすぐ下の広告部分は仮置き 
+    -# ヘッダーのすぐ下の広告部分の画像は仮置きpublicに画像を入れて表示 
 .middle
   .link-list
     = link_to "#",class: "link-list__home" do
@@ -315,88 +316,103 @@
         %img.popular-content__item--image{src: "#"}
         %h6.popular-content__item--name
           あああ
-  .adside
-    %h2.adside-banner
-      = link_to "//app.adjust.io/xio2ii?campaign=iOS&amp;adgroup=common.footer" do
+.adside
+  %h2.adside-banner
+    = link_to "//app.adjust.io/xio2ii?campaign=iOS&amp;adgroup=common.footer" do
+      = image_tag "//web-jp-assets.mercdn.net/_next/static/images/mercari_icon-f75780e32e41e052c8aaa8b446331cd8.png"
+      .adside-banner__link
+        スマホでかんたんフリマアプリ
+        .adside-banner__link__text
+          今すぐ無料ダウンロード！
+.adside2
+  .adside2-banner
+    .adside2-banner__links
+      .adside2-banner__links__text1
+        スマホでかんたんフリマアプリ
+      .adside2-banner__links__text2
+        今すぐ無料ダウンロード！
+      .adside2-banner__links__logo
         = image_tag "//web-jp-assets.mercdn.net/_next/static/images/mercari_icon-f75780e32e41e052c8aaa8b446331cd8.png"
-        .adside-banner__link
-          スマホでかんたんフリマアプリ
-          .adside-banner__link__text
-            今すぐ無料ダウンロード！
-  .footer
-    %nav
-      .merucari-overview
-        %h2.merucari-overview__title
-          メルカリについて
-        %ul.merucari-overview__lists
+        = link_to "#" do
+          = image_tag "/images/appstore.jpg"
+        = link_to "#" do
+          = image_tag "/images/googleplay.jpg"
+    .adside2-banner__figure
+      = image_tag "/images/merucari5.jpg"
+.footer
+  %nav
+    .merucari-overview
+      %h2.merucari-overview__title
+        メルカリについて
+      %ul.merucari-overview__lists
+        %li.list
+          = link_to "会社概要（運営会社)"
+        %li.list
+          = link_to "採用情報"
+        %li.list
+          = link_to "プレスリリース"
+        %li.list
+          = link_to "公式ブログ"
+        %li.list
+          = link_to "メルカリロゴ利用ガイドライン"
+        = link_to "#", class:"merucari-overview__btn twitter" do
+          = fa_icon 'twitter' 
+        = link_to "#", class:"merucari-overview__btn facebook" do
+          = fa_icon 'facebook-square'
+    .merucari-guide
+      %h2.merucari-guide__title
+        ヘルプ＆ガイド
+      %ul.merucari-guide__lists
+        %li.list
+          = link_to "メルカリガイド"
+        %li.list
+          = link_to "らくらくメルカリ便"
+        %li.list
+          = link_to "ゆうゆうメルカリ便"
+        %li.list
+          = link_to "大型メルカリ便"
+        %li.list
+          = link_to "車体取引ガイド"
+        %li.list
+          = link_to "メルカリあんしん・あんぜん宣言！"
+        %li.list
+          = link_to "偽ブランド品撲滅への取り組み"
+        %li.list
+          = link_to "メルカリボックス"
+    .merucari-privacy
+      %h2.merucari-privacy__title
+        プライバシーと利用規約
+      .merucari-privacy__lists
+        %ul.merucari-privacy__lists__1
           %li.list
-            = link_to "会社概要（運営会社)"
+            = link_to "プライバシーポリシー"
           %li.list
-            = link_to "採用情報"
+            = link_to "メルカリ利用規約"
           %li.list
-            = link_to "プレスリリース"
+            = link_to "あんしんスマホサポート制度に関する利用規約"
           %li.list
-            = link_to "公式ブログ"
+            = link_to "コンプライアンスポリシー"
+        %ul.merucari-privacy__lists__2
           %li.list
-            = link_to "メルカリロゴ利用ガイドライン"
-          = link_to "#", class:"merucari-overview__btn twitter" do
-            = fa_icon 'twitter' 
-          = link_to "#", class:"merucari-overview__btn facebook" do
-            = fa_icon 'facebook-square'
-      .merucari-guide
-        %h2.merucari-guide__title
-          ヘルプ＆ガイド
-        %ul.merucari-guide__lists
+            = link_to "個人データの安全管理に係る基本方針"
           %li.list
-            = link_to "メルカリガイド"
+            = link_to "特定商取引に関する表記"
           %li.list
-            = link_to "らくらくメルカリ便"
+            = link_to "資金決済法に基づく表示"
           %li.list
-            = link_to "ゆうゆうメルカリ便"
-          %li.list
-            = link_to "大型メルカリ便"
-          %li.list
-            = link_to "車体取引ガイド"
-          %li.list
-            = link_to "メルカリあんしん・あんぜん宣言！"
-          %li.list
-            = link_to "偽ブランド品撲滅への取り組み"
-          %li.list
-            = link_to "メルカリボックス"
-      .merucari-privacy
-        %h2.merucari-privacy__title
-          プライバシーと利用規約
-        .merucari-privacy__lists
-          %ul.merucari-privacy__lists__1
-            %li.list
-              = link_to "プライバシーポリシー"
-            %li.list
-              = link_to "メルカリ利用規約"
-            %li.list
-              = link_to "あんしんスマホサポート制度に関する利用規約"
-            %li.list
-              = link_to "コンプライアンスポリシー"
-          %ul.merucari-privacy__lists__2
-            %li.list
-              = link_to "個人データの安全管理に係る基本方針"
-            %li.list
-              = link_to "特定商取引に関する表記"
-            %li.list
-              = link_to "資金決済法に基づく表示"
-            %li.list
-              = link_to "法令順守と犯罪抑止のために"
-      .merucari-country
-        %h2.merucari-country__title
-          国
-        %ul.merucari-country__lists
-          %li.list
-            = link_to "日本"
-          %li.list
-            = link_to "United States"
-    .bottom-row
-      = link_to "#" do
-        %img{ class:"bottom-row__lists", src:"//www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?2482339763" }
-      %span.bottom-row__lists__name  @2019 Merucari
+            = link_to "法令順守と犯罪抑止のために"
+    .merucari-country
+      %h2.merucari-country__title
+        国
+      %ul.merucari-country__lists
+        %li.list
+          = link_to "日本"
+        %li.list
+          = link_to "United States"
+  .bottom-row
+    = link_to "#" do
+      %img{ class:"bottom-row__lists", src:"//www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?2482339763" }
+    %span.bottom-row__lists__name  @2019 Merucari
 = link_to "", class: "footer-sell-btn" do
   .footer-sell-btn__text
     出品
