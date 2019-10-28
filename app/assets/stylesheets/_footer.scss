@@ -57,7 +57,6 @@ a{text-decoration: none;
     .merucari-guide {
       display: inline-block;
       margin-top: 18px;
-      width: 50%;
       padding: 0 10px;
       vertical-align: top;
       &__title {
@@ -94,34 +93,33 @@ a{text-decoration: none;
         margin: 0;
         padding: 0;
       }
-      &__lists {
-        display: flex;
-        list-style: none;
-        &__1 {
-          li{
-            margin: 16px 0px 0px;
-            padding: 0px 10px 0px 0px;
-            a {
-              box-sizing: border-box;
-              margin: 16px 0px 0px;
-              font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
-              opacity: 0.7;
-              font-weight: normal;
-            }
-          }  
-        }
-        &__2 {
-          li{
-            margin: 16px 0px 0px;
-            padding: 0px 10px 0px 0px;
-            a {
-              box-sizing: border-box;
-              margin-bottom: 17px;
-              font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
-              opacity: 0.7;
-            }
-          }  
-        }
+      &__1 {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+        li{
+          margin: 16px 0px 0px;
+          line-height: 1.4em;
+          a {
+            color: rgb(255, 255, 255);
+            opacity: 0.7;
+          }
+        }  
+      }
+      &__2 {
+        display: inline-block;
+        padding-left: 10px;
+        vertical-align: top;
+        li{
+          margin: 16px 0px 0px;
+          padding: 0px 10px 0px 0px;
+          a {
+            box-sizing: border-box;
+            margin-bottom: 17px;
+            font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+            opacity: 0.7;
+          }
+        }  
       }
     }
     .merucari-country {
@@ -131,20 +129,19 @@ a{text-decoration: none;
       margin-top: 35px;
       padding: 0px;
       &__title {
-        font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
         font-size: 16px;
         font-weight: 600;
         line-height: 1.4em;
-        margin: 0;
-        padding: 0;
       }
       &__lists {
+        display: inline-block;
         li{
           margin: 16px 0px 0px;
           line-height: 1.4em;
+          
           a {
             margin-right: 30px;
-            font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+            color: rgb(255, 255, 255);
             opacity: 0.7;
           }  
         }
