@@ -1,31 +1,7 @@
 .common-container
-  = render 'signup-header'
-    -# active_redは赤丸表示、afterはactiveより後（右側）の線を定義、beforeはactiveより前（左側）before_red after_redと定義すると赤色に変わるようにした。
-    %nav
-      %ol.clearfix
-        %li.active_red
-          会員情報
-          .progress-status
-            .after
-        %li
-          電話番号認証
-          .progress-status
-            .before
-            .after
-        %li
-          お届け先住所入力
-          .progress-status
-            .before
-            .after
-        %li
-          支払い方法
-          .progress-status
-            .before
-            .after
-        %li
-          完了
-          .progress-status
-            .before                                                
+  
+  = render 'shared/step1-header' 
+
   %main.step1-main
     %section.l-step1-container
       %h2.l-step1-head.registration
@@ -96,5 +72,5 @@
             %p
               = link_to "本人情報の登録について"
               = fa_icon "arrow-right"
-  = render 'signup-footer'
+  = render  "shared/signup-footer"
 
