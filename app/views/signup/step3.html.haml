@@ -48,8 +48,7 @@
               %span.contents__form__require 必須
               .select-wrap
                 = fa_icon "arrow-bottom"
-                %select{name: "prefecture",class: "select-default"}
-                  %option{value:"北海道"}
+                = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "",class: "select-default"
             .form-group
               %label 市区町村
               %span.contents__form__require 必須

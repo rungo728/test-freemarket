@@ -1,3 +1,4 @@
+// 全ページに共通するプロパティ(clearfixなど)をここに記述
 body{
   background: #f5f5f5;
   min-height: 100%;
@@ -6,21 +7,33 @@ body{
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
 }
 
+*{
+  box-sizing: border-box;
+}
+
 .bold{
   font-weight: 600;
 }
-main{
-  display: block;
-}
+
 .clearfix:after{
   clear: both;
   content: "";
   display: block;
 }
+
 a{
   text-decoration: none;
   color: #0099e8;
 }
+
+h2{
+  font-size: 22px;
+  line-height: 1.4;
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
 .input-default {
   height: 48px;
   padding: 10px 16px 8px;
@@ -31,6 +44,19 @@ a{
   font-size: 16px;
   box-sizing: border-box;
 }
+
+.textarea-default {
+  display: block;
+  width: 100%;
+  max-width: 97%;
+  min-height: 104px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
 
 .btn-default{
   display: block;
@@ -43,3 +69,18 @@ a{
   cursor: pointer;
   text-align: center;
 }
+
+.btn-red{
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+}
+
+main{
+  display: block;
+}
+
+section{
+  display: block;
+}
+
