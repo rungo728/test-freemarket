@@ -1,39 +1,13 @@
-!!!
-%html
-  %head
-    %meta{charset: "UTF-8"}
-    %link{href: "application.scss", rel: "stylesheets"}
-    %link{href: "https://use.font-awesome.com/releases/v5.6.1/css/all.css", rel: "stylesheet"}
-    %title メルカリ スマホで簡単 フリマアプリ
-      
-%body
-  .header
-    .upper-row
-      .upper-row__logo
-        .upper-row__logo--mark
-          = fa_icon 'box', class: 'icon-merucari'
-        %h2.upper-row__logo--merucari
-          merucari
-      .upper-row__search
-        %input.upper-row__search--input{name: "search", placeholder: "キーワードを入力", type: "search", style: "width: 800px; height: 40px;"}
-        %button.upper-row__search--button{title: "検索", type: "submit"}
-          = fa_icon 'search', class: 'icon'  
-    .bottom-row
-      .bottom-row__category
-        = link_to '#' do
-          %ul.bottom-row__category--lists
-            %li.list-tag
-              = fa_icon 'list', class: 'icon-list'
-            %li.list-name
-              カテゴリーから探す
-      .bottom-row__brand
-        = link_to '#' do
-          %ul.bottom-row__brand--lists
-            %li.list-tag
-              = fa_icon 'tag', class: 'icon-list'
-            %li.list-name
-              ブランドから探す
-      %ul.bottom-row__lists
+.header
+  -# 768px以下の場合のヘッダー
+  -#  ヘッダー上段
+  .upper-row
+    -#  ヘッダーロゴ
+    = link_to root_path do
+      = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?4194600336", alt: "merucari"
+      -# ユーザーがログインしている時。各種情報。リンクは仮置き。
+    -if user_signed_in?
+      %ul.upper-row__lists
         %li.list
           = link_to '#' do
             = fa_icon 'heart', class: 'icon'
@@ -47,7 +21,7 @@
           = link_to '#' do
             お知らせ
         %li.list
-          = link_to '#' do
+          = link_to '#' do 
             = fa_icon 'check', class: 'icon'
         %a.list-name
           = link_to '#' do
@@ -58,316 +32,369 @@
         %a.list-name
           = link_to '#' do
             マイページ
-   
-  .content
-    .link-list
-      = link_to "#" do
-        %img.link-list__home{src: "#"}
-      = link_to "#" do
-        %img.linl-list__information{src: "#"}
-      %img.link-list__application{src: "#"}
-        .link-list__application--footer
-          = link_to "#" do
-            .apple-link
-              アップル
-          = link_to "#" do
-            .google-link
-              google
-    
-    .popular-category
-      .popular-category__title
-        人気のカテゴリー
-      %ul.popular-category__lists
+      -# ユーザーがログインしていない時。新規登録、ログイン部分。
+    - else
+      .upper-row__user
+        =link_to step1_signup_index_path(),class: "upper-row__user__registration" do
+          新規会員
+        =link_to new_user_session_path(),class: "upper-row__user__login" do
+          ログイン      
+    -#  検索フォーム    
+  .upper-row__search
+    %form
+      %input.upper-row__search--input{name: "search", placeholder: "何をお探しですか？", type: "search", style: "width: 100%; height: 40px;"}
+      %button.upper-row__search--button{title: "検索", type: "submit" }
+        = fa_icon 'search'
+  .under-row
+    = link_to '#' do
+      = fa_icon 'list'
+      %span
+        カテゴリーから探す
+    = link_to '#' do
+      = fa_icon 'tag'
+      %span
+        ブランドから探す
+  -#768px以上でのヘッダー画面表示 
+.header2
+  .upper-row
+    .upper-row__1
+      .upper-row__1__logo
+        = link_to root_path do
+          = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?4194600336", alt: "merucari"
+      %form.upper-row__1__search
+        %input.upper-row__1__search--input{name: "search", placeholder: "何をお探しですか？", type: "search", style: "width: 100%; height: 40px;"}
+        %button.upper-row__1__search--button{title: "検索", type: "submit" }
+          = fa_icon 'search'
+    .under-row
+      .under-row__links
+        .under-row__links__category
+          = link_to '#' do
+            = fa_icon 'list'
+            %span
+              カテゴリーから探す
+        .under-row__links__brand
+          = link_to '#' do
+            = fa_icon 'tag'
+            %span
+              ブランドから探す
+      -if user_signed_in?
+        %ul.under-row__lists
+          %li.list
+            = link_to '#' do
+              = fa_icon 'heart', class: 'icon'
+          %a.list-name
+            = link_to '#' do
+              いいね！一覧
+          %li.list
+            = link_to '#' do
+              = fa_icon 'bell', class: 'icon'
+          %a.list-name
+            = link_to '#' do
+              お知らせ
+          %li.list
+            = link_to '#' do 
+              = fa_icon 'check', class: 'icon'
+          %a.list-name
+            = link_to '#' do
+              やることリスト
+          %li.list
+            = link_to '#' do
+              = fa_icon 'smile', class: 'icon'
+          %a.list-name
+            = link_to '#' do
+              マイページ
+        -# ユーザーがログインしていない時。新規登録、ログイン部分。
+      - else
+        .under-row__user
+          .under-row__user__registration
+            = link_to step1_signup_index_path() do
+              新規会員登録
+          .under-row__user__login    
+            = link_to new_user_session_path() do
+              ログイン
+    -# ヘッダーのすぐ下の広告部分の画像は仮置きpublicに画像を入れて表示 
+.middle
+  .link-list
+    = link_to "#",class: "link-list__home" do
+      = image_tag ("merucari2.jpg")
+    = link_to "#",class: "link-list__infomation"do
+      = image_tag ("#")
+    %img.link-list__application{src: "#"}
+      .link-list__application--footer
+        = link_to "#" do
+          .apple-link
+            アップル
+        = link_to "#" do
+          .google-link
+            google
+  
+  .popular-category
+    .popular-category__title
+      人気のカテゴリー
+    %ul.popular-category__lists
+      %li.list
+        = link_to "#" do
+          あああ
+      %li.list
+        = link_to "#" do
+          あああ
+      %li.list
+        = link_to "#" do
+          あああ
+  .popular-items
+    .popular-header
+      %h3.popular-header__title
+        レディース新着アイテム
+      %h6.popular-header__link
+        = link_to "#" do
+          = image_tag ("merucari1.jpg") 
+          もっと見る ＞
+    .popular-content
+      .popular-content__item
+        %img.popular-content__item--image{src: "#"}
+        %h6.popular-content__item--name
+          あああ
+      .popular-content__item
+        %img.popular-content__item--image{src: "#"}
+        %h6.popular-content__item--name
+          あああ
+      .popular-content__item
+        %img.popular-content__item--image{src: "#"}
+        %h6.popular-content__item--name
+          あああ
+  .popular-items
+    .popular-header
+      %h3.popular-header__title
+        メンズ新着アイテム
+      %h6.popular-header__link
+        = link_to "#" do
+          もっと見る ＞
+    .popular-content
+      .popular-content__item
+        %img.popular-content__item--image{src: "#"}
+        %h6.popular-content__item--name
+          あああ
+      .popular-content__item
+        %img.popular-content__item--image{src: "#"}
+        %h6.popular-content__item--name
+          あああ
+      .popular-content__item
+        %img.popular-content__item--image{src: "#"}
+        %h6.popular-content__item--name
+          あああ
+  .popular-items
+    .popular-header
+      %h3.popular-header__title
+        家電新着アイテム
+      %h6.popular-header__link
+        = link_to "#" do
+          もっと見る ＞
+    .popular-content
+      .popular-content__item
+        %img.popular-content__item--image{src: "#"}
+        %h6.popular-content__item--name
+          あああ
+      .popular-content__item
+        %img.popular-content__item--image{src: "#"}
+        %h6.popular-content__item--name
+          あああ
+      .popular-content__item
+        %img.popular-content__item--image{src: "#"}
+        %h6.popular-content__item--name
+          あああ
+  .popular-items
+    .popular-header
+      %h3.popular-header__title
+        おもちゃ新着アイテム
+      %h6.popular-header__link
+        = link_to "#" do
+          もっと見る ＞
+    .popular-content
+      .popular-content__item
+        %img.popular-content__item--image{src: "#"}
+        %h6.popular-content__item--name
+          あああ
+      .popular-content__item
+        %img.popular-content__item--image{src: "#"}
+        %h6.popular-content__item--name
+          あああ
+      .popular-content__item
+        %img.popular-content__item--image{src: "#"}
+        %h6.popular-content__item--name
+          あああ
+  
+  .popular-brand
+    .popular-brand__title
+      人気のブランド
+    %ul.popular-brand__lists
+      %li.list
+        = link_to "#" do
+          あああ
+      %li.list
+        = link_to "#" do
+          あああ
+      %li.list
+        = link_to "#" do
+          あああ
+  .popular-items
+    .popular-header
+      %h3.popular-header__title
+        シャネル新着アイテム
+      %h6.popular-header__link
+        = link_to "#" do
+          もっと見る ＞
+    .popular-content
+      .popular-content__item
+        %img.popular-content__item--image{src: "#"}
+        %h6.popular-content__item--name
+          あああ
+      .popular-content__item
+        %img.popular-content__item--image{src: "#"}
+        %h6.popular-content__item--name
+          あああ
+      .popular-content__item
+        %img.popular-content__item--image{src: "#"}
+        %h6.popular-content__item--name
+          あああ
+  .popular-items
+    .popular-header
+      %h3.popular-header__title
+        ルイヴィトン新着アイテム
+      %h6.popular-header__link
+        = link_to "#" do
+          もっと見る ＞
+    .popular-content
+      .popular-content__item
+        %img.popular-content__item--image{src: "#"}
+        %h6.popular-content__item--name
+          あああ
+      .popular-content__item
+        %img.popular-content__item--image{src: "#"}
+        %h6.popular-content__item--name
+          あああ
+      .popular-content__item
+        %img.popular-content__item--image{src: "#"}
+        %h6.popular-content__item--name
+          あああ
+  .popular-items
+    .popular-header
+      %h3.popular-header__title
+        シュプリーム新着アイテム
+      %h6.popular-header__link
+        = link_to "#" do
+          もっと見る ＞
+    .popular-content
+      .popular-content__item
+        %img.popular-content__item--image{src: "#"}
+        %h6.popular-content__item--name
+          あああ
+      .popular-content__item
+        %img.popular-content__item--image{src: "#"}
+        %h6.popular-content__item--name
+          あああ
+      .popular-content__item
+        %img.popular-content__item--image{src: "#"}
+        %h6.popular-content__item--name
+          あああ
+  .popular-items
+    .popular-header
+      %h3.popular-header__title
+        ナイキ新着アイテム
+      %h6.popular-header__link
+        = link_to "#" do
+          もっと見る ＞
+    .popular-content
+      .popular-content__item
+        %img.popular-content__item--image{src: "#"}
+        %h6.popular-content__item--name
+          あああ
+      .popular-content__item
+        %img.popular-content__item--image{src: "#"}
+        %h6.popular-content__item--name
+          あああ
+      .popular-content__item
+        %img.popular-content__item--image{src: "#"}
+        %h6.popular-content__item--name
+          あああ
+= render "shared/adside-footer"
+.footer
+  %nav
+    .merucari-overview
+      %h2.merucari-overview__title
+        メルカリについて
+      %ul.merucari-overview__lists
         %li.list
-          = link_to "#" do
-            あああ
+          = link_to "会社概要（運営会社)"
         %li.list
-          = link_to "#" do
-            あああ
+          = link_to "採用情報"
         %li.list
-          = link_to "#" do
-            あああ
-    .popular-itms
-      .popular-header
-        %h3.popular-header__title
-          レディース新着アイテム
-        %h6.popular-header__link
-          = link_to "#" do
-            もっと見る ＞
-      .popular-content
-        .popular-content__item
-          %img.popular-content__item--image{src: "#"}
-          %h6.popular-content__item--name
-            あああ
-        .popular-content__item
-          %img.popular-content__item--image{src: "#"}
-          %h6.popular-content__item--name
-            あああ
-        .popular-content__item
-          %img.popular-content__item--image{src: "#"}
-          %h6.popular-content__item--name
-            あああ
-    .popular-items
-      .popular-header
-        %h3.popular-header__title
-          メンズ新着アイテム
-        %h6.popular-header__link
-          = link_to "#" do
-            もっと見る ＞
-      .popular-content
-        .popular-content__item
-          %img.popular-content__item--image{src: "#"}
-          %h6.popular-content__item--name
-            あああ
-        .popular-content__item
-          %img.popular-content__item--image{src: "#"}
-          %h6.popular-content__item--name
-            あああ
-        .popular-content__item
-          %img.popular-content__item--image{src: "#"}
-          %h6.popular-content__item--name
-            あああ
-    .popular-items
-      .popular-header
-        %h3.popular-header__title
-          家電新着アイテム
-        %h6.popular-header__link
-          = link_to "#" do
-            もっと見る ＞
-      .popular-content
-        .popular-content__item
-          %img.popular-content__item--image{src: "#"}
-          %h6.popular-content__item--name
-            あああ
-        .popular-content__item
-          %img.popular-content__item--image{src: "#"}
-          %h6.popular-content__item--name
-            あああ
-        .popular-content__item
-          %img.popular-content__item--image{src: "#"}
-          %h6.popular-content__item--name
-            あああ
-    .popular-items
-      .popular-header
-        %h3.popular-header__title
-          おもちゃ新着アイテム
-        %h6.popular-header__link
-          = link_to "#" do
-            もっと見る ＞
-      .popular-content
-        .popular-content__item
-          %img.popular-content__item--image{src: "#"}
-          %h6.popular-content__item--name
-            あああ
-        .popular-content__item
-          %img.popular-content__item--image{src: "#"}
-          %h6.popular-content__item--name
-            あああ
-        .popular-content__item
-          %img.popular-content__item--image{src: "#"}
-          %h6.popular-content__item--name
-            あああ
-    
-    .popular-brand
-      .popular-brand__title
-        人気のブランド
-      %ul.popular-brand__lists
+          = link_to "プレスリリース"
         %li.list
-          = link_to "#" do
-            あああ
+          = link_to "公式ブログ"
         %li.list
-          = link_to "#" do
-            あああ
+          = link_to "メルカリロゴ利用ガイドライン"
+        = link_to "#", class:"merucari-overview__btn twitter" do
+          = fa_icon 'twitter' 
+        = link_to "#", class:"merucari-overview__btn facebook" do
+          = fa_icon 'facebook-square'
+    .merucari-guide
+      %h2.merucari-guide__title
+        ヘルプ＆ガイド
+      %ul.merucari-guide__lists
         %li.list
-          = link_to "#" do
-            あああ
-    .popular-items
-      .popular-header
-        %h3.popular-header__title
-          シャネル新着アイテム
-        %h6.popular-header__link
-          = link_to "#" do
-            もっと見る ＞
-      .popular-content
-        .popular-content__item
-          %img.popular-content__item--image{src: "#"}
-          %h6.popular-content__item--name
-            あああ
-        .popular-content__item
-          %img.popular-content__item--image{src: "#"}
-          %h6.popular-content__item--name
-            あああ
-        .popular-content__item
-          %img.popular-content__item--image{src: "#"}
-          %h6.popular-content__item--name
-            あああ
-    .popular-items
-      .popular-header
-        %h3.popular-header__title
-          ルイヴィトン新着アイテム
-        %h6.popular-header__link
-          = link_to "#" do
-            もっと見る ＞
-      .popular-content
-        .popular-content__item
-          %img.popular-content__item--image{src: "#"}
-          %h6.popular-content__item--name
-            あああ
-        .popular-content__item
-          %img.popular-content__item--image{src: "#"}
-          %h6.popular-content__item--name
-            あああ
-        .popular-content__item
-          %img.popular-content__item--image{src: "#"}
-          %h6.popular-content__item--name
-            あああ
-    .popular-items
-      .popular-header
-        %h3.popular-header__title
-          シュプリーム新着アイテム
-        %h6.popular-header__link
-          = link_to "#" do
-            もっと見る ＞
-      .popular-content
-        .popular-content__item
-          %img.popular-content__item--image{src: "#"}
-          %h6.popular-content__item--name
-            あああ
-        .popular-content__item
-          %img.popular-content__item--image{src: "#"}
-          %h6.popular-content__item--name
-            あああ
-        .popular-content__item
-          %img.popular-content__item--image{src: "#"}
-          %h6.popular-content__item--name
-            あああ
-    .popular-items
-      .popular-header
-        %h3.popular-header__title
-          ナイキ新着アイテム
-        %h6.popular-header__link
-          = link_to "#" do
-            もっと見る ＞
-      .popular-content
-        .popular-content__item
-          %img.popular-content__item--image{src: "#"}
-          %h6.popular-content__item--name
-            あああ
-        .popular-content__item
-          %img.popular-content__item--image{src: "#"}
-          %h6.popular-content__item--name
-            あああ
-        .popular-content__item
-          %img.popular-content__item--image{src: "#"}
-          %h6.popular-content__item--name
-            あああ
-    .adside
-      %adside-banner
-        %img.merucari-link__img
-          = link_to "#" do
-            .merucari-link__apple
-              アップル
-          = link_to "#" do
-            .merucari-link__google
-              グーグル
-
-    .footer
-      %nav.merucari
-        .merucari-overview
-          %h3.merucari-overview__title
-            メルカリについて
-          %ul.merucari-overview__lists
-            %li.list
-              = link_to "#", class:"merucari-overview__lists__name" do
-                会社概要（運営会社）
-            %li.list
-              = link_to "#", class:"merucari-overview__lists__name" do
-                採用情報
-            %li.list
-              = link_to "#", class:"merucari-overview__lists__name" do
-                プレスリリース
-            %li.list
-              = link_to "#", class:"merucari-overview__lists__name" do
-                公式ブログ
-            %li.list
-              = link_to "#", class:"merucari-overview__lists__name" do
-                メルカリロゴ利用ガイドライン
-            %li.list__link1
-              = link_to "#", class:"merucari-overview__lists__link1__btn--twitter" do
-                = fa_icon 'twitter' 
-            %li.list__link2
-              = link_to "#", class:"merucari-overview__lists__link2__btn--facebook" do
-                = fa_icon 'facebook-square'
-        .merucari-guide
-          %h3.merucari-guide__title
-            ヘルプ＆ガイド
-          %ul.merucari-guide__lists
-            %li.list
-              = link_to "#", class:"merucari-guide__lists__name" do
-                メルカリガイド
-            %li.list
-              = link_to "#", class:"merucari-guide__lists__name" do
-                らくらくメルカリ便
-            %li.list
-              = link_to "#", class:"merucari-guide__lists__name" do
-                ゆうゆうメルカリ便
-            %li.list
-              = link_to "#", class:"merucari-guide__lists__name" do
-                大型メルカリ便
-            %li.list
-              = link_to "#", class:"merucari-guide__lists__name" do
-                車体取引ガイド
-            %li.list
-              = link_to "#", class:"merucari-guide__lists__name" do
-                メルカリあんしん・あんぜん宣言！
-            %li.list
-              = link_to "#", class:"merucari-guide__lists__name" do
-                偽ブランド品撲滅への取り組み
-            %li.list
-              = link_to "#", class:"merucari-guide__lists__name" do
-                メルカリボックス
-        .merucari-privacy
-          %h3.merucari-privacy__title
-            プライバシーと利用規約
-          .merucari-privacy__lists
-            %ul.merucari-privacy__lists__1
-              %li.list
-                = link_to "#", class:"merucari-privacy__lists__1__name" do
-                  プライバシーポリシー
-              %li.list
-                = link_to "#", class:"merucari-privacy__lists__1__name" do
-                  メルカリ利用規約
-              %li.list
-                = link_to "#", class:"merucari-privacy__lists__1__name" do
-                  あんしんスマホサポート制度に関する利用規約
-              %li.list
-                = link_to "#", class:"merucari-privacy__lists__1__name" do
-                  コンプライアンスポリシー
-            %ul.merucari-privacy__lists__2
-              %li.list
-                = link_to "#", class:"merucari-privacy__lists__2__name" do
-                  個人データの安全管理に係る基本方針
-              %li.list
-                = link_to "#", class:"merucari-privacy__lists__2__name" do
-                  特定商取引に関する表記
-              %li.list
-                = link_to "#", class:"merucari-privacy__lists__2__name" do
-                  資金決済法に基づく表示
-              %li.list
-                = link_to "#", class:"merucari-privacy__lists__2__name" do
-                  法令順守と犯罪抑止のために
-        .merucari-country
-          %h3.merucari-country__title
-            国
-          %ul.merucari-country__lists
-            %li.list
-              = link_to "#", class:"merucari-country__lists__name" do
-                日本
-            %li.list
-              = link_to "#", class:"merucari-country__lists__name" do
-                United States
-      .bottom-row
-        %ul.bottom-row__lists
-          = link_to "#", class:"bottom-row__lists__btn" do
-            %img{ class:"bottom-row__lists__btn", src:"//www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?2482339763" }
-          %span.bottom-row__lists__name  @2019 Merucari
+          = link_to "メルカリガイド"
+        %li.list
+          = link_to "らくらくメルカリ便"
+        %li.list
+          = link_to "ゆうゆうメルカリ便"
+        %li.list
+          = link_to "大型メルカリ便"
+        %li.list
+          = link_to "車体取引ガイド"
+        %li.list
+          = link_to "メルカリあんしん・あんぜん宣言！"
+        %li.list
+          = link_to "偽ブランド品撲滅への取り組み"
+        %li.list
+          = link_to "メルカリボックス"
+    .merucari-privacy
+      %h2.merucari-privacy__title
+        プライバシーと利用規約
+      .merucari-privacy__1
+        %ul
+          %li.list
+            = link_to "プライバシーポリシー"
+          %li.list
+            = link_to "メルカリ利用規約"
+          %li.list
+            = link_to "あんしんスマホサポート制度に関する利用規約"
+          %li.list
+            = link_to "コンプライアンスポリシー"
+      .merucari-privacy__2
+        %ul
+          %li.list
+            = link_to "個人データの安全管理に係る基本方針"
+          %li.list
+            = link_to "特定商取引に関する表記"
+          %li.list
+            = link_to "資金決済法に基づく表示"
+          %li.list
+            = link_to "法令順守と犯罪抑止のために"
+    .merucari-country
+      %h2.merucari-country__title
+        国
+      %ul.merucari-country__lists
+        %li.list
+          = link_to "日本"
+      %ul.merucari-country__lists
+        %li.list
+          = link_to "United States"
+  .bottom-row
+    = link_to "#" do
+      %img{ class:"bottom-row__lists", src:"//www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?2482339763" }
+    %span.bottom-row__lists__name  @2019 Merucari
+= link_to "", class: "footer-sell-btn" do
+  .footer-sell-btn__text
+    出品
+  = fa_icon "camera"   
+        

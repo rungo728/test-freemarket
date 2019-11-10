@@ -1,114 +1,326 @@
-a{text-decoration: none;}
-.header {
-  background-color: white;
-  z-index: 3;
-  height: 12vh;
-  position: fixed;
-  width: 100vw;
-  .upper-row {
-    display: flex;
-    &__logo {
-      padding: 0 20px 0 200px;
+body{
+  position: relative;
+  min-height: 100vh;
+  font-size: 14px;
+  a{text-decoration: none;}
+  .header {
+    background-color: rgb(255, 255, 255);
+    top: 0px;
+    position: sticky;
+    z-index: 3;
+    padding-top: 6px;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    .upper-row {
       display: flex;
-      &--mark {
-        text-align: center;
-        font-size: 25px;
-        padding: 5px 0 0 0;
+      align-items: center;
+      min-height: 36px;
+      margin-bottom: 10px;
+      padding: 0px 10px;
+      justify-content: space-between;
+      a{
+        img{
+          width: 132px;
+          vertical-align: middle;
+        }
       }
-      &--merucari {
-        padding: 0 0 0 5px;
-        font-size: 25px;
+      .upper-row__user{
+        align-items: center;
+        display: flex;
+        -webkit-box-align: center;
+        &__registration{
+          line-height: 26px;
+          display: block;
+          text-align: center;
+          color: rgb(255, 255, 255);
+          border-width: 1px;
+          border-style: solid;
+          padding: 2px 8px;
+          border-radius: 4px;
+          background: rgb(234, 53, 45);
+          border-color: rgb(234, 53, 45);
+        }
+        &__login{
+          display: block;
+          line-height: 26px;
+          text-align: center;
+          color: rgb(0, 149, 238);
+          margin-left: 6px;
+          border-radius: 4px;
+          background: rgb(255, 255, 255);
+          border :1px solid rgb(0, 149, 238);
+          padding: 2px 8px;
+        }
+      }
+      &__search {
+        padding: 0px 10px 8px;
+        position: relative;
+        &--input {
+          background-color: rgb(245, 245, 245);
+          font-size: 16px;
+          height: 40px;
+          line-height: 1.4em;
+          position: relative;
+          width: 100%;
+          border-style: solid;
+          border-color: rgb(204, 204, 204);
+          border-radius: 4px;
+          outline: none;
+          padding: 0px 50px 0px 10px;
+        }
+        &--button {
+          background-color: transparent;
+          cursor: pointer;
+          height: 40px;
+          position: absolute;
+          right: 10px;
+          top: 0px;
+          width: 40px;
+          border-style: none;
+          border-radius: 0px 4px 4px 0px;
+          padding: 0px;
+
+        }  
       }
     }
-    &__search {
-      padding: 5px 0 0 10px;
-      &--input {
-        height: 25px;
-        width: 60vw;
-      }
-      &--button {
-      }
-    }
-  }
-  .bottom-row {
-    display: flex;
-    bottom: 0;
-    &__category {
-      padding: 5px 20px 0 200px;
-      width: 150px;
-      height: 10wh;
-      .list-tag {
-        color: red;
-        float: left;
-        padding: 0 5px 0 0;
-      }
-      .list-name {
-        padding: 0 0 0 5px;
-        color: black;
-        font-size: 13px;
-        font-weight: 700;
-      }
-    }
-    &__brand {
-      width: 150px;
-      padding: 5px 0 0 0;
-      .list-tag {
-        color: red;
-        float: left;
-      }
-      .list-name {
-        color: black;
-        padding: 0 0 0 5px;
-        font-size: 13px;
-        font-weight: 700;
-      }
-    }
-    &__lists {
-      padding: 5px 0 0 180px;
+    .under-row {
       display: flex;
-      .list {
-        color: gray;
-        padding: 0 5px 0 20px;
+      a {
+        align-items: center;
+        height: 42px;
+        justify-content: center;
+        width: 50%;
+        padding-bottom: 4px;
+        .fa-list{
+          color: red;
+          height: 12px;
+          margin: 0px 2px 0px -2px;
+          width: 20;
+        }  
+        span{
+          font-size: 14px;
+          font-weight: 600;
+          color: black;
+        }
       }
-      .list-name {
-        color: black;
+      a {
+        align-items: center;
+        display: flex;
+        height: 42px;
+        width: 50%;
+        padding-bottom: 4px;
+        .fa-tag{
+          color: red;
+          width: 23;
+          height: 12px;
+          margin: 0px 1px 0px -2px;
+        }  
+        span{
+          font-size: 14px;
+          font-weight: 600;
+          color: black;
+        }
+      }
+    }
+  }  
+  .middle{
+    width: 100%;
+    margin: 0px auto;
+    padding: 0px 10px;
+    .link-list {
+      position: relative;
+      &__home {
+        height: 170px;
+        left: 50%;
+        margin-left: -50vw;
+        position: relative;
+        top: 0px;
+        width: 100vw;
+        overflow: hidden;
+        img{
+          position: relative;
+          background-size: cover;
+          height: 170px;
+          background-position: center;
+          width: 100%;
+        }
+      }
+      &__information {
+        width: 100vw;
+        height: 38vh;
+        float: left;
+        position: relative;
+      }
+      &__application {
+        width: 100vw;
+        height: 38vh;
+        float:left;
+        position: relative;
+        &--footer {
+          bottom: 0;
+          height: 30px;
+          background-color: white;
+          opacity: 0.3;
+        }
       }
     }
   }
-}
-.content {
-  padding: 12vh 0 0;
-  .link-list {
-    width: 100vw;
-    height: 38vh;
-    left: 0;
-    background-color: antiquewhite;
-    overflow: hidden;
-    will-change: transform;
-    animation: slider 20s infinite;
-    &__home {
-      width: 100vw;
-      height: 38vh;
-      float: left;
-      position: relative;
+  @media screen and (max-width: 767px){
+  .header2{
+    display: none;
+  }
+  }
+  @media screen and (min-width: 768px){  
+  .header{
+    display: none;
+  }  
+  .header2{
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    z-index: 3;
+    .upper-row{
+      width: 700px;
+      margin: 0px auto;
+      padding: 8px 0px 0px;
+      &__1{
+        display: flex;
+        justify-content: space-between;
+        &__logo{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 40px;
+          margin-right: 45px;
+          a{
+            img{
+              height: 36px;
+              width: 134px;
+            }
+          }
+        }
+        &__search{
+          position: relative;
+          width: 100%;
+          &--input{
+            background-color: rgb(245, 245, 245);
+            height: 40px;
+            line-height: 1.4em;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(204, 204, 204);
+            border-radius: 4px;
+            padding: 0px 50px 0px 10px;
+          }
+          &--button{
+            background-color: transparent;
+            cursor: pointer;
+            height: 40px;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            width: 40px;
+            border-style: none;
+            border-radius: 0px 4px 4px 0px;
+            padding: 0px;
+            .fa-search{
+              height: 14px;
+              margin-top: 2px;
+              width: 14px;
+
+            }
+          }
+        } 
+      }  
     }
-    &__information {
-      width: 100vw;
-      height: 38vh;
-      float: left;
-      position: relative;
-    }
-    &__application {
-      width: 100vw;
-      height: 38vh;
-      float:left;
-      position: relative;
-      &--footer {
-        bottom: 0;
-        height: 30px;
-        background-color: white;
-        opacity: 0.3;
+    .under-row{
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8px;
+      &__links{
+        display: flex;
+        margin-left: -3px;
+        &__category{
+          cursor: pointer;
+          height: 44px;
+          position: relative;
+          z-index: 3;
+          padding: 0px 10px;
+          a{
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 36px;
+            .fa-list{
+              color: rgb(234, 53, 45);
+              height: 12px;
+              margin-right: 4px;
+            }
+            span{
+              font-size: 14px;
+              font-weight: 600;
+              color: black;
+            }
+          }
+        }
+        &__brand{
+          cursor: pointer;
+          height: 44px;
+          position: relative;
+          z-index: 3;
+          padding: 0px 10px;
+          a{
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 36px;
+            .fa-tag{
+              color: rgb(234, 53, 45);
+              height: 12px;
+              margin-right: 4px;
+            }
+            span{
+              font-size: 14px;
+              font-weight: 600;
+              color: black;    
+            }
+          }
+        }
+      }  
+      &__user{
+        display: flex;
+        &__registration{
+          text-align: center;
+          a{
+            background-color: rgb(234, 53, 45);
+            color: rgb(255, 255, 255);
+            display: block;
+            font-size: 14px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(234, 53, 45);
+            border-radius: 4px;
+            padding: 8px 10px;
+
+          }
+        }
+        &__login{
+          text-align: center;
+          margin-left: 11px;
+          a{
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 149, 238);
+            display: block;
+            font-size: 14px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(0, 149, 238);
+            border-radius: 4px;
+            padding: 8px 10px;
+
+          }
+        }
       }
     }
   }
-}
+  }
+}  
