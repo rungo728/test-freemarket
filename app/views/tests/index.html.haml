@@ -316,30 +316,7 @@
         %img.popular-content__item--image{src: "#"}
         %h6.popular-content__item--name
           あああ
-
-.adside
-  %h2.adside-banner
-    = link_to "//app.adjust.io/xio2ii?campaign=iOS&amp;adgroup=common.footer" do
-      = image_tag "//web-jp-assets.mercdn.net/_next/static/images/mercari_icon-f75780e32e41e052c8aaa8b446331cd8.png"
-      .adside-banner__link
-        スマホでかんたんフリマアプリ
-        .adside-banner__link__text
-          今すぐ無料ダウンロード！
-.adside2
-  .adside2-banner
-    .adside2-banner__links
-      .adside2-banner__links__text1
-        スマホでかんたんフリマアプリ
-      .adside2-banner__links__text2
-        今すぐ無料ダウンロード！
-      .adside2-banner__links__logo
-        = image_tag "//web-jp-assets.mercdn.net/_next/static/images/mercari_icon-f75780e32e41e052c8aaa8b446331cd8.png"
-        = link_to "#" do
-          = image_tag "/images/appstore.jpg"
-        = link_to "#" do
-          = image_tag "/images/googleplay.jpg"
-    .adside2-banner__figure
-      = image_tag "/images/merucari5.jpg"
+= render "shared/adside-footer"
 .footer
   %nav
     .merucari-overview
