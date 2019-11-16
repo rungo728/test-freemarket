@@ -1,7 +1,7 @@
 @import "reset";
-@import "footer";
+@import "shared/main_footer";
 @import "font-awesome";
-@import "top_page_header";
+@import "shared/top_page_header";
 @import "sign_up";
 @import "adside";
 @import "templete";
@@ -11,4 +11,6 @@
 @import "step3";
 @import "step4";
 @import "step5";
-@import "step2_2"
+@import "step2_2";
+@import "items/index";
+@import "shared/sell_btn"
