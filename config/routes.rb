@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'tests#index'
+  root 'items#index'
   resources :tests, only: [:index, :show, :new]
   resources :users, only: [:index, :show, :new, :edit]
   resources :signup do
@@ -13,5 +13,6 @@ Rails.application.routes.draw do
       get 'step5'
       get 'done'
     end
-  end    
+  end  
+  resources :items, only: [:index, :show, :new]  
 end

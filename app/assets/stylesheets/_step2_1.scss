@@ -1,5 +1,22 @@
 .common-container{
   .common-header{
+    text-align: center;
+    h1{
+      display: inline-block;
+      margin: 11px 0 12px;
+      // ヘッダーロゴの部分
+      a{
+        display:inline-block;
+        width: 125px;
+        height: 33px;
+        margin: 0 8px 0 0;
+        line-height: 33px;
+        img{
+          width: 125px;
+          height: 33px;
+        }
+      }  
+    }
     //現在ページ情報のバー
     .progress-bar{
       font-size: 0;
@@ -85,7 +102,7 @@
         }
       }
     }
-  }
+  }  
   .l-step2-container{
     background: #fff;
     .l-chapter-head.registration{

@@ -1,25 +1,25 @@
 // 画面の幅768px以下だった場合の各要素のプロパティの設定
-.common-container{
-  padding: 0 0 250px;
-  .common-header{
-    text-align: center;
-    h1{
-      display: inline-block;
-      margin: 11px 0 12px;    
-      // ヘッダーロゴの部分
-      a{
-        display:inline-block;
+.common-header{
+  text-align: center;
+  h1{
+    display: inline-block;
+    margin: 11px 0 12px;
+    // ヘッダーロゴの部分
+    a{
+      display:inline-block;
+      width: 125px;
+      height: 33px;
+      margin: 0 8px 0 0;
+      line-height: 33px;
+      img{
         width: 125px;
         height: 33px;
-        margin: 0 8px 0 0;
-        line-height: 33px;
-        img{
-          width: 125px;
-          height: 33px;
-        }
-      }  
-    }
+      }
+    }  
   }
+}
+.common-container{
+  padding: 0 0 250px;
   .contents-main{
     display: block;
     .contents-container{
@@ -137,23 +137,22 @@
   }
 }
 @media screen and (min-width: 768px){
-.common-container{
-  .common-header{
-    height: 128px;
-    h1{
-      margin:40px 0 0;
-      a{
+.common-header{
+  height: 128px;
+  h1{
+    margin:40px 0 0;
+    a{
+      width: 180px;
+      height: 49px;
+      line-height: 49px;
+      img{
         width: 180px;
         height: 49px;
-        line-height: 49px;
-        img{
-          width: 180px;
-          height: 49px;
-        }
       }
     }
-    
   }
+}
+.common-container{
   .contents-main{
     .contents-container{
       width:700px;

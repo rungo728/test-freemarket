@@ -1,9 +1,6 @@
 -# ページのヘッダー部分
 .common-container
-  %header.common-header
-    %h1
-      = link_to root_path do
-        = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?4194600336", alt: "merucari",class: 'common-header__image'
+  = render "shared/signup-header"
   -# 登録方法選択画面
   %main.contents-main
     %section.contents-container
