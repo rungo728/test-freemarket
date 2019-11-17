@@ -42,84 +42,85 @@
         .popular-content__items
           %ul.popular-content__items--list
             // データベースから並べる時に使用
-            -# - @ladyes.each do |lady|
+            - @ladies.each do |lady|
+              %li.popular-content__item
+                %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+                  = link_to "", class: "items-link" do
+                    .item-box
+                      %span
+                        ¥
+                        = lady.price
+                      - lady.photos.each do |photo|
+                        = image_tag photo.photo
+                    .item-name
+                      %span
+                        = lady.name
+            -# %li.popular-content__item
+            -#   %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+            -#     = link_to "", class: "items-link" do
+            -#       .item-box
+            -#         %span
+            -#           ¥
+            -#           1000
+            -#         = image_tag 'viton.jpeg'
+            -#       .item-name
+            -#         %span
+            -#           レディース
             -#   %li.popular-content__item
             -#     %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
             -#       = link_to "", class: "items-link" do
             -#         .item-box
             -#           %span
             -#             ¥
-            -#             = lady.price
+            -#             1000
             -#           = image_tag 'viton.jpeg'
             -#         .item-name
             -#           %span
-            -#             = lady.name
-            %li.popular-content__item
-              %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
-                = link_to "", class: "items-link" do
-                  .item-box
-                    %span
-                      ¥
-                      1000
-                    = image_tag 'viton.jpeg'
-                  .item-name
-                    %span
-                      レディース
-              %li.popular-content__item
-                %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
-                  = link_to "", class: "items-link" do
-                    .item-box
-                      %span
-                        ¥
-                        1000
-                      = image_tag 'viton.jpeg'
-                    .item-name
-                      %span
-                        レディース
-              %li.popular-content__item
-                %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
-                  = link_to "", class: "items-link" do
-                    .item-box
-                      %span
-                        ¥
-                        1000
-                      = image_tag 'viton.jpeg'
-                    .item-name
-                      %span
-                        レディース
-              %li.popular-content__item
-                %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
-                  = link_to "", class: "items-link" do
-                    .item-box
-                      %span
-                        ¥
-                        1000
-                      = image_tag 'viton.jpeg'
-                    .item-name
-                      %span
-                        レディース
-              %li.popular-content__item
-                %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
-                  = link_to "", class: "items-link" do
-                    .item-box
-                      %span
-                        ¥
-                        1000
-                      = image_tag 'viton.jpeg'
-                    .item-name
-                      %span
-                        レディース
-              %li.popular-content__item
-                %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
-                  = link_to "", class: "items-link" do
-                    .item-box
-                      %span
-                        ¥
-                        1000
-                      = image_tag 'viton.jpeg'
-                    .item-name
-                      %span
-                        レディース
+            -#             レディース
+            -#   %li.popular-content__item
+            -#     %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+            -#       = link_to "", class: "items-link" do
+            -#         .item-box
+            -#           %span
+            -#             ¥
+            -#             1000
+            -#           = image_tag 'viton.jpeg'
+            -#         .item-name
+            -#           %span
+            -#             レディース
+            -#   %li.popular-content__item
+            -#     %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+            -#       = link_to "", class: "items-link" do
+            -#         .item-box
+            -#           %span
+            -#             ¥
+            -#             1000
+            -#           = image_tag 'viton.jpeg'
+            -#         .item-name
+            -#           %span
+            -#             レディース
+            -#   %li.popular-content__item
+            -#     %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+            -#       = link_to "", class: "items-link" do
+            -#         .item-box
+            -#           %span
+            -#             ¥
+            -#             1000
+            -#           = image_tag 'viton.jpeg'
+            -#         .item-name
+            -#           %span
+            -#             レディース
+            -#   %li.popular-content__item
+            -#     %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+            -#       = link_to "", class: "items-link" do
+            -#         .item-box
+            -#           %span
+            -#             ¥
+            -#             1000
+            -#           = image_tag 'viton.jpeg'
+            -#         .item-name
+            -#           %span
+            -#             レディース
       .popular-header
         .popular-header__item
           %h3.popular-header__item__title
