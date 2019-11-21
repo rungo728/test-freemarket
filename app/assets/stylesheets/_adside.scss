@@ -1,7 +1,7 @@
-.adside{
+.aside{
   color: rgb(255, 255, 255);
   background-image: url("merucari3.jpg");
-  .adside-banner{
+  .aside-banner{
     a{
       background-color: rgba(0, 0, 0, 0.2);
       color: rgb(255, 255, 255);
@@ -15,7 +15,7 @@
         height: 50px;
         margin-right: 20px;
       }  
-      .adside-banner__link{
+      .aside-banner__link{
         flex-direction: column;
         &__text{
           font-size: 20px;
@@ -27,18 +27,18 @@
   }
 }
 @media screen and (max-width: 767px){
-.adside2{
+.aside2{
   display: none;
 }
 }
 @media screen and (min-width: 768px){  
-.adside{
+.aside{
   display: none;
 }
-.adside2{
+.aside2{
   color: rgb(255, 255, 255);
   background-image: url("merucari3.jpg");
-  .adside2-banner{
+  .aside2-banner{
     display: flex;
     width: 750px;
     margin: 0px auto;
