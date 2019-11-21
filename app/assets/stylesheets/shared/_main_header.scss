@@ -160,10 +160,15 @@
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
   z-index: 3;
-  .upper-row{
+  &__inner{
     width: 700px;
     margin: 0px auto;
     padding: 8px 0px 0px;
+  }
+  .upper-row{
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
     .mercari-logo{
       display: flex;
       justify-content: space-between;
@@ -305,4 +310,18 @@
     }
   }
 }
-}  
+}
+@media screen and (min-width: 1068px){
+.header-wide{
+  &__inner{
+    width: 1020px;
+    .under-row{
+      &__lists{
+        .list:first-child{
+          display: block;
+        }
+      }
+    }
+  }
+}
+}
