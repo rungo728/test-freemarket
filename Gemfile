@@ -59,3 +59,4 @@ gem 'carrierwave'
 gem 'fog-aws'
 gem 'seed-fu'
 gem 'ancestry'
+gem "gretel"
