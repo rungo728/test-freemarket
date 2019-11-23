@@ -42,6 +42,13 @@ crumb :items_name do
   link @item.name, items_path
 end
 
+# 検索結果ページ
+crumb :items_search do 
+  @q = Item.search(params[:q])
+  # 検索した文字だけを表示できるように@qの後ろにname_contをつける
+  link @q.name_cont, items_path
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end
