@@ -59,4 +59,9 @@ gem 'carrierwave'
 gem 'fog-aws'
 gem 'seed-fu'
 gem 'ancestry'
+#パンくずリストを作るためのgem
 gem "gretel"
+# ページネーションを作るためのgem
+gem 'kaminari'
+# 検索を容易にするためのgem
+gem 'ransack' 
