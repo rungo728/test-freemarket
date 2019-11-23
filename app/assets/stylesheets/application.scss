@@ -1,11 +1,11 @@
 @import "reset";
 @import "shared/main_footer";
 @import "font-awesome";
-@import "shared/top_page_header";
+@import "shared/main_header";
 @import "sign_up";
 @import "adside";
 @import "templete";
-@import "login";
+@import "users/login";
 @import "step1";
 @import "step2_1";
 @import "step3";
@@ -13,4 +13,12 @@
 @import "step5";
 @import "step2_2";
 @import "items/index";
-@import "shared/sell_btn"
+@import "shared/sell_btn";
+@import "users/show";
+@import "users/edit";
+@import "users/identification";
+@import "users/card";
+@import "users/logout";
+@import "items/show";
+@import "items/search";
+@import "items/confirmation";
