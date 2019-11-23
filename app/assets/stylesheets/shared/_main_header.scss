@@ -4,7 +4,7 @@
   position: sticky;
   z-index: 3;
   padding-top: 6px;
-  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  height: 100%;
   .upper-row {
     display: flex;
     align-items: center;
@@ -102,8 +102,7 @@
       border-style: none;
       border-radius: 0px 4px 4px 0px;
       padding: 0px;
-
-    }  
+    }
   }
   .under-row {
     display: flex;
@@ -114,6 +113,7 @@
       justify-content: center;
       width: 50%;
       padding-bottom: 4px;
+      box-sizing: border-box;
       .fa-list{
         color: red;
         height: 12px;
@@ -146,6 +146,8 @@
     }
   }
 }  
+
+
 @media screen and (max-width: 767px){
 .header-wide{
   display: none;
@@ -154,7 +156,7 @@
 @media screen and (min-width: 768px){  
 .header{
   display: none;
-}  
+} 
 .header-wide{
   position: relative;
   background-color: rgb(255, 255, 255);
@@ -174,13 +176,20 @@
       justify-content: space-between;
       align-items: center;
       height: 40px;
-      margin-right: 45px;
       a{
         img{
           height: 36px;
           width: 134px;
         }
       }
+    }
+    form{
+      position: relative;
+      margin-left: 45px;
+      width: 100%;
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
     }
     &__search{
       position: relative;
@@ -194,6 +203,7 @@
         border-color: rgb(204, 204, 204);
         border-radius: 4px;
         padding: 0px 50px 0px 10px;
+        font-size: 16px;
       }
       &--button{
         background-color: transparent;
@@ -210,13 +220,13 @@
           height: 14px;
           margin-top: 2px;
           width: 14px;
-
         }
       }
     } 
-  }  
+  }
   .under-row{
     display: flex;
+    -webkit-box-pack: justify;
     justify-content: space-between;
     margin-top: 8px;
     &__links{
@@ -245,7 +255,7 @@
           }
         }
       }
-    }  
+    }
     &__user{
       display: flex;
       &__registration{
@@ -260,7 +270,6 @@
           border-color: rgb(234, 53, 45);
           border-radius: 4px;
           padding: 8px 10px;
-
         }
       }
       &__login{
@@ -311,6 +320,7 @@
   }
 }
 }
+
 @media screen and (min-width: 1068px){
 .header-wide{
   &__inner{
